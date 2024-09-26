@@ -178,6 +178,7 @@ class _ItemListScreenState extends State<ItemListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue[400],
       appBar: AppBar(
         backgroundColor: Colors.blue[400],
         title: Text('AirDrops - NC'),
@@ -189,7 +190,7 @@ class _ItemListScreenState extends State<ItemListScreen> {
                   builder: (BuildContext context) {
                     return AlertDialog(
                       title: Text('App Info'),
-                      content: Text('Version : 1.1'),
+                      content: Text('Version : 1.4 - testing'),
                       actions: <Widget>[
                         TextButton(
                           child: Text('Close'),
@@ -213,6 +214,7 @@ class _ItemListScreenState extends State<ItemListScreen> {
           : ListView.builder(
               itemCount: items.length + bannerAds.length,
               itemBuilder: (context, index) {
+                
                 // Determine if it's time to show an ad
                 if (index % 5 == 0 && index ~/ 5 < bannerAds.length) {
                   final BannerAd bannerAd = bannerAds[index ~/ 5];
@@ -228,6 +230,7 @@ class _ItemListScreenState extends State<ItemListScreen> {
                 final item = items[itemIndex];
 
                 return ListTile(
+                  
                   leading: Image.network(item['imageLink'],
                       width: 50, height: 50, fit: BoxFit.cover),
                   title: Text(item['title']),
