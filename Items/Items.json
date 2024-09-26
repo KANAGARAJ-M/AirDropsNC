@@ -1,0 +1,50 @@
+{
+    "items": [
+      {
+        "id": 1,
+        "category": "Crypto",
+        "title": "T-REX NODE",
+        "description": "Welcome to T-REX NODE! Discover the innovative Mine-To-Earn app, designed for Telegram! Take advantage of cloud mining TRX on a platform built on the TRON blockchain, offering fast transactions and minimal fees. Join the T-REX NODE community and start earning today! Complete tasks, invite friends, purchase mining cards, and increase your share in the TRON network for maximum profit. Don't miss the opportunity to boost your income and move toward financial freedom with us!",
+        "shortDescription": "Get upto 1500 TRX/hour",
+        "imageLink": "https://airdrops.7rounds.xyz/assets/crypto/trxnode.jpg",
+        "buttonLink": "https://t.me/t_rex_node_bot?start=6446248129"
+      },
+      {
+        "id": 2,
+        "category": "Crypto",
+        "title": "Seed",
+        "description": "Welcome to SEED. Create account and start nurturing hidden gems from SEED! Why SEED? SEED is the native token for Web3 futuristic ecosystem. Collect more SEED for compounding interest from airdrops and top-tier platforms incentives. This App works separately from your Telegram account, keeping all your data safe and secure right on your device.",
+        "shortDescription": "Earn upto $5USD daily",
+        "imageLink": "https://airdrops.7rounds.xyz/assets/crypto/seed.jpg",
+        "buttonLink": "https://t.me/seed_coin_bot/app?startapp=6446248129"
+      },
+      {
+        "id": 3,
+        "category": "Crypto",
+        "title": "Blum",
+        "description": "At Blum, we are building a decentralized exchange in Telegram, specializing in trading memecoins and new tokens. We feature a unique memepad for launching new meme-based projects and incorporate gamified mechanics to enhance user engagement. Here’s what you can do with Blum now: Farm Blum Points: Play our Drop game to earn Blum Points (BPs) Invite Friends: Bring your friends and family for more BPs! More friends = more BPs Complete Quests: Finish tasks to rack up even more BPs! Start farming points now, and who knows what cool stuff you'll snag with them soon! Stay Blum!",
+        "shortDescription": "Earn upto $1500 every month",
+        "imageLink": "https://airdrops.7rounds.xyz/assets/crypto/blum.jpg",
+        "buttonLink": "https://t.me/blum/app?startapp=ref_B9gftkVMeR"
+      },
+      {
+        "id": 4,
+        "category": "Crypto",
+        "title": "Hamster Kombat",
+        "description": "Hello! Welcome to Hamster Kombat You are now the director of a crypto exchange. Which one? You choose. Tap the screen, collect coins, pump up your passive income, develop your own income strategy. We will definitely appreciate your efforts once the token is listed (the dates are coming soon). Dont forget about your friends — bring them to the game and get even more coins together!",
+        "shortDescription": "Alert $100 Million AirDrop Alert",
+        "imageLink": "https://airdrops.7rounds.xyz/assets/crypto/ham.jpg",
+        "buttonLink": "https://t.me/hamster_kombaT_bot/start?startapp=kentId6446248129"
+      },
+      {
+        "id": 5,
+        "category": "Crypto",
+        "title": "HOT",
+        "description": "HOT is a Telegram-based non-custodial wallet for Solana, NEAR, Base and other blockchains. Easily import or create an account, transfer tokens, and mine HOT Coin. This wallet operates independently of your Telegram account, ensuring all data is securely stored locally on your device",
+        "shortDescription": "Earn 1HOT = $10",
+        "imageLink": "https://airdrops.7rounds.xyz/assets/crypto/hot.jpg",
+        "buttonLink": "https://t.me/herewalletbot/app?startapp=9898147"
+      }
+    ]
+  }
+  
