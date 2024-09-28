@@ -1,0 +1,14 @@
+{
+    "AppInfo":[
+        {
+            "id":"App-Version 01",
+            "VersionCode":"0",
+            "VersionName":"0.0.1-testing",
+            "PackageName":"airdrops.nocorps.xyz",
+            "MinSdkVersion":"19",
+            "AppDetail":"Earn more than usual by AirdropsNC",
+            "AppVersion":"0.0.1"
+        }
+    ]
+
+}
