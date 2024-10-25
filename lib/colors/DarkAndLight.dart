@@ -12,4 +12,7 @@ class DarkUi {
 
 class LightUi{
   static Color appBar=Colors.teal;
+  static Color body =Colors.teal.shade400;
+  static Color textColor = Colors.black;
+  
 }
