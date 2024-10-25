@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "898179316329",
+    "firebase_url": "https://resdhan-earnings-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "resdhan-earnings",
+    "storage_bucket": "resdhan-earnings.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898179316329:android:28089da5c6657f954580f8",
+        "android_client_info": {
+          "package_name": "airdrops.nocorps.xyz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898179316329-7qsp1in1qmqtie3h2k27gf72p0m4a8fv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "airdrops.nocorps.xyz",
+            "certificate_hash": "a26387eef0bc1a7cad0ad62eb605b3928b04ebdf"
+          }
+        },
+        {
+          "client_id": "898179316329-tf2ijg1octb1kfoss92ltkjekc6u2ra3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "airdrops.nocorps.xyz",
+            "certificate_hash": "92f3ff432d2f299ba1fff2549c34fb75e982563e"
+          }
+        },
+        {
+          "client_id": "898179316329-s8fih3e95d3oot4ilq21ucdu0jctjf5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZxcDRvH0nOExp0zQA6wkqZxkAiLVJ8Rk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898179316329-s8fih3e95d3oot4ilq21ucdu0jctjf5i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "898179316329-78qj16pmrrfpf3g0r2604m55n0lu935a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "hootapp.nocorps.xyz"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898179316329:android:68592c23522aa86f4580f8",
+        "android_client_info": {
+          "package_name": "anc.nocorps.xyz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898179316329-s8fih3e95d3oot4ilq21ucdu0jctjf5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZxcDRvH0nOExp0zQA6wkqZxkAiLVJ8Rk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898179316329-s8fih3e95d3oot4ilq21ucdu0jctjf5i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "898179316329-78qj16pmrrfpf3g0r2604m55n0lu935a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "hootapp.nocorps.xyz"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
