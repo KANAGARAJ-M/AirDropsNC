@@ -37,7 +37,8 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('/home/kanagaraj/Downloads/AirDropsNC-main/android/my-release-key.keystore')
+            // storeFile file('/home/kanagaraj/Downloads/AirDropsNC-main/android/my-release-key.keystore')
+            storeFile file('A:/FlutterApps/AirDropsNC/android/my-release-key.keystore')
             storePassword '12345678'
             keyAlias 'my-key-alias'
             keyPassword '12345678'
