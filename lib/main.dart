@@ -1,7 +1,7 @@
 import 'package:air_drops/phase1/main.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+// import 'package:supabase_flutter/supabase_flutter.dart';
 ///PHASE 2
 // Future<void> main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
@@ -12,6 +12,8 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 //   );
 //   runApp(MyApp());
 // }
+
+
 ///PHASE !
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

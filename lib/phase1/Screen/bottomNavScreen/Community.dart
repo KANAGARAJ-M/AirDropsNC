@@ -1,8 +1,16 @@
 import 'package:air_drops/phase1/colors/UiColors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-class CommunityPage extends StatelessWidget {
+class CommunityPage extends StatefulWidget {
   const CommunityPage({super.key});
+
+  @override
+  _CommunityPageState createState() => _CommunityPageState();
+}
+
+class _CommunityPageState extends State<CommunityPage> {
+  late InAppWebViewController _controller;
 
   @override
   Widget build(BuildContext context) {
@@ -10,14 +18,13 @@ class CommunityPage extends StatelessWidget {
       backgroundColor: Uicolor.body,
       appBar: AppBar(
         backgroundColor: Uicolor.appBar,
-        title: const Text('Community - Coming Soon!..'),
+        title: const Text('Community'),
       ),
-      body: const Center(
-        child: Text("Coming Soon...",style: TextStyle(
-                fontSize: 24,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),),
+      body: InAppWebView(
+        initialUrlRequest: URLRequest(
+          url: WebUri("https://aic.7rounds.xyz/"),
+        ),
+
       ),
     );
   }

@@ -21,7 +21,7 @@ class UpdateCheckerApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Checking for Updates...',
-      home: const UpdateChecker(),
+      home: const NewM(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -59,8 +59,9 @@ class _UpdateCheckerState extends State<UpdateChecker> {
 
     try {
       await remoteConfig.setConfigSettings(RemoteConfigSettings(
-        fetchTimeout: const Duration(minutes: 1),
+        fetchTimeout: const Duration(minutes: 5),
         minimumFetchInterval: Duration.zero,
+
       ));
       await remoteConfig.fetchAndActivate();
 
