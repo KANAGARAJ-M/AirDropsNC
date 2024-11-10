@@ -8,7 +8,7 @@ class SplashScreen extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(seconds: 5), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const AuthPage()),
       );
@@ -20,7 +20,7 @@ class SplashScreen extends StatelessWidget {
         child: SizedBox(
           height: 150,
           width: 150,
-          child: Image.asset('assets/logo.png')
+          child: Image.asset('assets/logo/aic_coin_512.png')
         ),
       ),
     );

@@ -22,7 +22,8 @@ class _CommunityPageState extends State<CommunityPage> {
       ),
       body: InAppWebView(
         initialUrlRequest: URLRequest(
-          url: WebUri("https://aic.7rounds.xyz/"),
+          url: WebUri("https://aicnc.netlify.app/"),
+          
         ),
 
       ),

@@ -1,7 +1,8 @@
 // buildscript {
 //     dependencies {
 //         // Add this line
-//         classpath 'com.google.gms:google-services:4.3.10' // Check for the latest version
+//         // classpath 'com.google.gms:google-services:4.3.10' // Check for the latest version
+//         ext.kotlin_version = '1.9.10'
 //     }
 // }
 

@@ -62,7 +62,7 @@ class _MainScreenState extends State<MainScreen> {
           });
         },
         children: [
-          const TasksScreenPage(),
+          TasksScreenPage(),
           CommunityPage(),
           CoinAnimationScreen(),
           // CoinAnimationScreen(),

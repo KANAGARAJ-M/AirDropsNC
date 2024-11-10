@@ -6,7 +6,6 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:convert'; // For parsing JSON
 
-
 // Future<void> main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
 //   await Firebase.initializeApp();
@@ -22,15 +21,30 @@ class UpdateCheckerApp extends StatelessWidget {
     return MaterialApp(
       title: 'Checking for Updates...',
       home: const NewM(),
+      // theme: ThemeData(
+      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      //   useMaterial3: true,
+      // ),
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primaryColor: Color(0xFF1E90FF), // Royal Blue
+        hintColor: Color(0xFFFF6B6B), // Soft Light Gray
+        scaffoldBackgroundColor: Color(0xFFF4F5F7),
+        cardColor: Color(0xFFFFFFFF), // Pure White
+        textTheme: TextTheme(
+          displayLarge: TextStyle(color: Color(0xFF2D2D2D)), // Dark Gray
+          bodyLarge: TextStyle(color: Color(0xFF6B6B6B)), // Secondary Gray
+        ),
+        buttonTheme: ButtonThemeData(
+          buttonColor: Color(0xFF1E90FF), // Primary button color
+          textTheme: ButtonTextTheme.primary,
+        ),
         useMaterial3: true,
       ),
+
       debugShowCheckedModeBanner: false,
     );
   }
 }
-
 
 class UpdateChecker extends StatefulWidget {
   const UpdateChecker({super.key});
@@ -61,7 +75,6 @@ class _UpdateCheckerState extends State<UpdateChecker> {
       await remoteConfig.setConfigSettings(RemoteConfigSettings(
         fetchTimeout: const Duration(minutes: 5),
         minimumFetchInterval: Duration.zero,
-
       ));
       await remoteConfig.fetchAndActivate();
 
@@ -78,7 +91,8 @@ class _UpdateCheckerState extends State<UpdateChecker> {
       int serVerDorR = remoteConfig.getInt('ServerDown');
       int appUpdate = remoteConfig.getInt('appupdatedown');
 
-      if (_isVersionOutdated(currentVersionName, requiredVersionName, currentVersionNumber, requiredVersionNumber)) {
+      if (_isVersionOutdated(currentVersionName, requiredVersionName,
+          currentVersionNumber, requiredVersionNumber)) {
         _showUpdateDialog(requiredVersionName);
       } else if (serVerDorR == 0) {
         _ShowServerDownFunction(serVerDorR);
@@ -87,14 +101,15 @@ class _UpdateCheckerState extends State<UpdateChecker> {
       } else {
         _startApp();
       }
-
     } catch (error) {
       _showErrorDialog(error.toString());
     }
   }
 
-  bool _isVersionOutdated(String currentVersionName, String requiredVersionName, int currentVersionNumber, int requiredVersionNumber) {
-    return currentVersionName != requiredVersionName || currentVersionNumber < requiredVersionNumber;
+  bool _isVersionOutdated(String currentVersionName, String requiredVersionName,
+      int currentVersionNumber, int requiredVersionNumber) {
+    return currentVersionName != requiredVersionName ||
+        currentVersionNumber < requiredVersionNumber;
   }
 
   void _showUpdateDialog(String requiredVersionNumber) {
@@ -106,7 +121,8 @@ class _UpdateCheckerState extends State<UpdateChecker> {
           onWillPop: () async => false,
           child: AlertDialog(
             title: const Text('Update Required'),
-            content: Text('A new version of the app ($requiredVersionNumber) is available. Please update to continue.'),
+            content: Text(
+                'A new version of the app ($requiredVersionNumber) is available. Please update to continue.'),
             actions: <Widget>[
               TextButton(
                 child: const Text('Update Now'),
@@ -130,7 +146,8 @@ class _UpdateCheckerState extends State<UpdateChecker> {
           onWillPop: () async => false,
           child: AlertDialog(
             title: const Text('Maintenance Down'),
-            content: const Text('Server down due to regular maintenance. Please be patient.'),
+            content: const Text(
+                'Server down due to regular maintenance. Please be patient.'),
             actions: <Widget>[
               TextButton(
                 child: const Text('Stay Updated'),
@@ -154,7 +171,8 @@ class _UpdateCheckerState extends State<UpdateChecker> {
           onWillPop: () async => false,
           child: AlertDialog(
             title: const Text('New Features on the way'),
-            content: const Text('We are updating our server and application. Please be patient.'),
+            content: const Text(
+                'We are updating our server and application. Please be patient.'),
             actions: <Widget>[
               TextButton(
                 child: const Text('Stay Updated'),
@@ -178,7 +196,8 @@ class _UpdateCheckerState extends State<UpdateChecker> {
           onWillPop: () async => false,
           child: AlertDialog(
             title: const Text('No Internet Connection'),
-            content: const Text('Please connect to a stable internet connection to proceed.'),
+            content: const Text(
+                'Please connect to a stable internet connection to proceed.'),
             actions: <Widget>[
               TextButton(
                 child: const Text('Close App'),
@@ -202,7 +221,6 @@ class _UpdateCheckerState extends State<UpdateChecker> {
       print('Could not launch $url');
     }
   }
-
 
   Future<void> _stayUpdateWithUS() async {
     const url = 'https://x.com/nocorps_dev';
@@ -251,7 +269,8 @@ class _UpdateCheckerState extends State<UpdateChecker> {
 }
 
 class NewM extends StatelessWidget {
-  static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
 
   const NewM({super.key});
 

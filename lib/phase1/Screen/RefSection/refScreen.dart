@@ -1,4 +1,3 @@
-
 import 'package:air_drops/phase1/colors/UiColors.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -28,10 +27,43 @@ class _ReferralScreenState extends State<ReferralScreen> {
   }
 
   // Fetch referral code and referred users
+  // void fetchReferralData() async {
+  //   User? currentUser = _auth.currentUser;
+  //   if (currentUser != null) {
+  //     DocumentSnapshot userDoc = await _firestore.collection('users').doc(currentUser.uid).get();
+
+  //     if (userDoc.exists) {
+  //       setState(() {
+  //         referralCode = userDoc['referralCode'] ?? '';
+  //       });
+
+  //       List referredUserIds = userDoc['referrals'] ?? [];
+  //       if (referredUserIds.isNotEmpty) {
+  //         for (String uid in referredUserIds) {
+  //           DocumentSnapshot referredDoc = await _firestore.collection('users').doc(uid).get();
+  //           if (referredDoc.exists) {
+  //             setState(() {
+  //               referredUsers.add({
+  //                 'firstName': referredDoc['firstName'] ?? '',
+  //                 'email': referredDoc['email'] ?? '',
+  //               });
+  //             });
+  //           }
+  //         }
+  //       }
+
+  //       // Generate a dynamic link with the referral code
+  //       await _createDynamicLink(referralCode);
+  //     }
+  //   }
+  // }
+
+  ///VERSION 2
   void fetchReferralData() async {
     User? currentUser = _auth.currentUser;
     if (currentUser != null) {
-      DocumentSnapshot userDoc = await _firestore.collection('users').doc(currentUser.uid).get();
+      DocumentSnapshot userDoc =
+          await _firestore.collection('users').doc(currentUser.uid).get();
 
       if (userDoc.exists) {
         setState(() {
@@ -41,7 +73,8 @@ class _ReferralScreenState extends State<ReferralScreen> {
         List referredUserIds = userDoc['referrals'] ?? [];
         if (referredUserIds.isNotEmpty) {
           for (String uid in referredUserIds) {
-            DocumentSnapshot referredDoc = await _firestore.collection('users').doc(uid).get();
+            DocumentSnapshot referredDoc =
+                await _firestore.collection('users').doc(uid).get();
             if (referredDoc.exists) {
               setState(() {
                 referredUsers.add({
@@ -53,6 +86,12 @@ class _ReferralScreenState extends State<ReferralScreen> {
           }
         }
 
+        // Update the total count of referrals in Firestore
+        int totalRefers = referredUsers.length;
+        await _firestore.collection('users').doc(currentUser.uid).update({
+          'totalRefers': totalRefers,
+        });
+
         // Generate a dynamic link with the referral code
         await _createDynamicLink(referralCode);
       }
@@ -62,10 +101,13 @@ class _ReferralScreenState extends State<ReferralScreen> {
   // Function to create a dynamic link
   Future<void> _createDynamicLink(String referralCode) async {
     final DynamicLinkParameters parameters = DynamicLinkParameters(
-      uriPrefix: 'https://airdropsnc.page.link', // Replace with your dynamic link domain
-      link: Uri.parse('https://airdropsnc.page.link/refer?code=$referralCode'), // Add referral code as a query parameter
+      uriPrefix:
+          'https://airdropsnc.page.link', // Replace with your dynamic link domain
+      link: Uri.parse(
+          'https://airdropsnc.page.link/refer?code=$referralCode'), // Add referral code as a query parameter
       androidParameters: const AndroidParameters(
-        packageName: 'anc.nocorps.xyz', // Replace with your Android package name
+        packageName:
+            'anc.nocorps.xyz', // Replace with your Android package name
         minimumVersion: 8,
       ),
       iosParameters: const IOSParameters(
@@ -74,7 +116,8 @@ class _ReferralScreenState extends State<ReferralScreen> {
       ),
     );
 
-    final ShortDynamicLink shortDynamicLink = await FirebaseDynamicLinks.instance.buildShortLink(parameters);
+    final ShortDynamicLink shortDynamicLink =
+        await FirebaseDynamicLinks.instance.buildShortLink(parameters);
     setState(() {
       dynamicLinkUrl = shortDynamicLink.shortUrl.toString();
     });
@@ -90,20 +133,22 @@ class _ReferralScreenState extends State<ReferralScreen> {
   }
 
   void _shareYourCode(String text) {
-    final String message = "Download our app from play store - https://play.google.com/store/apps/details?id=anc.nocorps.xyz  \nOpen our app and register an new user then fill the details.\nPaste your referral code while registration.\nYour REFERRAL CODE = $text";
-    Share.share(message,subject: "Invite Code *$text*");
+    final String message =
+        "Download our app from play store - https://play.google.com/store/apps/details?id=anc.nocorps.xyz  \nOpen our app and register an new user then fill the details.\nPaste your referral code while registration.\nYour REFERRAL CODE = $text";
+    Share.share(
+      message,
+      subject: "Invite Code *$text*",
+    );
     // Share.share(text,);
   }
 
-
   void _shareReferralCode() {
-  final String message =
-      "Join me on this app! Use my referral code: $referralCode\n\n"
-      "Or use this link: $dynamicLinkUrl";
+    final String message =
+        "Join me on this app! Use my referral code: $referralCode\n\n"
+        "Or use this link: $dynamicLinkUrl";
 
     Share.share(message);
   }
-
 
   //Download our app from play store.\nOpen our app and register an new user then fill the details.\nPaste your referral code while registration.\nYour REFERRAL CODE = $referralCode
 
@@ -146,10 +191,14 @@ class _ReferralScreenState extends State<ReferralScreen> {
                       Expanded(
                         child: Text(
                           referralCode,
-                          style: const TextStyle(fontSize: 16, color: Colors.blue),
+                          style:
+                              const TextStyle(fontSize: 16, color: Colors.blue),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
+                      IconButton(
+                          onPressed: () => _copyToClipboard(referralCode),
+                          icon: const Icon(Icons.copy)),
                       IconButton(
                         icon: const Icon(Icons.share),
                         onPressed: () => _shareYourCode(referralCode),
@@ -159,49 +208,15 @@ class _ReferralScreenState extends State<ReferralScreen> {
                 ],
               ),
             ),
-            // const SizedBox(height: 20),
-            // Container to show referral link with copy option
-            // Container(
-            //   height: MediaQuery.of(context).size.height / 6,
-            //   padding: const EdgeInsets.all(16),
-            //   decoration: BoxDecoration(
-            //     color: Colors.white,
-            //     borderRadius: BorderRadius.circular(6),
-            //     border: Border.all(
-            //       color: Colors.blue,
-            //     ),
-            //   ),
-            //   child: Column(
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //     children: [
-            //       const Text(
-            //         "Your Referral Link:",
-            //         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            //       ),
-            //       const SizedBox(height: 8),
-            //       Row(
-            //         mainAxisAlignment: MainAxisAlignment.center,
-            //         children: [
-            //           Expanded(
-            //             child: Text(
-            //               dynamicLinkUrl,
-            //               style: const TextStyle(fontSize: 16, color: Colors.blue),
-            //               overflow: TextOverflow.ellipsis,
-            //             ),
-            //           ),
-            //           IconButton(
-            //             icon: const Icon(Icons.copy),
-            //             onPressed: () => _copyToClipboard(dynamicLinkUrl),
-            //           ),
-            //         ],
-            //       ),
-            //     ],
-            //   ),
-            // ),
+            
             const SizedBox(height: 20),
-            const Text(
-              "Referred Friends:",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+
+            Text(
+              "Referred Friends: ${referredUsers.length}",
+              style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
             const SizedBox(height: 10),
             // List of referred friends
@@ -213,8 +228,10 @@ class _ReferralScreenState extends State<ReferralScreen> {
                         return Card(
                           margin: const EdgeInsets.symmetric(vertical: 8),
                           child: ListTile(
-                            title: Text(referredUsers[index]['firstName'] ?? 'No Name'),
-                            subtitle: Text(referredUsers[index]['email'] ?? 'No Email'),
+                            title: Text(
+                                referredUsers[index]['firstName'] ?? 'No Name'),
+                            subtitle: Text(
+                                referredUsers[index]['email'] ?? 'No Email'),
                           ),
                         );
                       },
