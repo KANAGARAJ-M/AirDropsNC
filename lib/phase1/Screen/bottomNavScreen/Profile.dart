@@ -667,8 +667,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
               ),
-              const Center(child: Text("App Version: 14")),
-              const Center(child: Text("Build Version: 1.12.2454")),
+              const Center(child: Text("App Version: 15")),
+              const Center(child: Text("Build Version: 1.15.2454")),
               const SizedBox(height: 20),
               const Text("Connect your Wallet", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16)),
               Center(
