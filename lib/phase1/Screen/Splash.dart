@@ -1,5 +1,6 @@
 
 import 'package:air_drops/phase1/auth/auth_page.dart';
+import 'package:air_drops/phase1/colors/UiColors.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -15,13 +16,38 @@ class SplashScreen extends StatelessWidget {
     });
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 56, 181, 255),
-      body: Center(
-        child: SizedBox(
-          height: 150,
-          width: 150,
-          child: Image.asset('assets/logo/aic_coin_512.png')
-        ),
+      backgroundColor: Uicolor.splash_logo_color,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          
+          Center(
+            child: SizedBox(
+              height: 150,
+              width: 150,
+              child: Image.asset('assets/logo/aic_logo_500px_teal.png')
+            ),
+          ),
+          const SizedBox(height: 5),
+          const Center(
+            child: Text(
+              'By',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w900,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          Center(
+            child: SizedBox(
+              height: 150,
+              width: 150,
+              child: Image.asset('assets/logo/nc_logo_no_bg.png')
+            ),
+          ),
+          const SizedBox(height: 20),
+        ],
       ),
     );
   }

@@ -1,6 +1,7 @@
 //ANIMATED
 import 'package:air_drops/phase1/Screen/bottomNavScreen/Profile.dart';
 import 'package:air_drops/phase1/Screen/bottomNavScreen/Community.dart';
+import 'package:air_drops/phase1/Screen/bottomNavScreen/Ranking/RankingHome.dart';
 import 'package:air_drops/phase1/Screen/bottomNavScreen/crypto/CoinAni.dart';
 import 'package:air_drops/phase1/Screen/bottomNavScreen/refer.dart';
 import 'package:air_drops/phase1/Screen/bottomNavScreen/tasks/TasksScreen.dart';
@@ -63,7 +64,8 @@ class _MainScreenState extends State<MainScreen> {
         },
         children: [
           TasksScreenPage(),
-          CommunityPage(),
+          // CommunityPage(),
+          RankinghomePage(),
           CoinAnimationScreen(),
           // CoinAnimationScreen(),
           const ReferScreen(),
@@ -86,8 +88,8 @@ class _MainScreenState extends State<MainScreen> {
             label: 'Tasks',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.newspaper),
-            label: 'Community',
+            icon: Icon(Icons.tour_sharp),
+            label: 'Ranking',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
