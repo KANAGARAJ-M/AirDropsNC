@@ -1,3 +1,4 @@
+import 'package:air_drops/phase1/customs/GoogleProgressBarC.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:air_drops/phase1/auth/auth_service.dart';
@@ -158,8 +159,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
               ),
-              const Center(child: Text("App Version: 20")),
-              const Center(child: Text("Build Version: 1.20.2025")),
+              const Center(child: Text("App Version: 21")),
+              const Center(child: Text("Build Version: 1.21.2025-01")),
               const SizedBox(height: 20),
               const Text("Connect your Wallet", style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16)),
               Center(
@@ -190,7 +191,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: userData == null
-            ? const Center(child: CircularProgressIndicator())
+            ? const Center(child: GoogleColorChangingProgressBar())
             : Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

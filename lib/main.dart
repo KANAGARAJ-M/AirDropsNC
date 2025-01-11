@@ -56,8 +56,9 @@ class UpdateCheckerAppScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Checking for Updates...',
-      home: UpdateCheckerScreen(),
+      title: 'AIC Coin by NoCorps',
+      // home: UpdateCheckerScreen(),
+      home: SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

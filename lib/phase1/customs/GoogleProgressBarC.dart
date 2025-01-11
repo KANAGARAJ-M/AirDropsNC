@@ -35,35 +35,35 @@ class _GoogleColorChangingProgressBarState
     _colorAnimation = TweenSequence<Color?>(
       [
         TweenSequenceItem(
-          weight: 1.0,
+          weight: 3,
           tween: ColorTween(begin: Colors.blue, end: Colors.red),
         ),
         TweenSequenceItem(
-          weight: 1.0,
+          weight: 3,
           tween: ColorTween(begin: Colors.red, end: Colors.green),
         ),
         TweenSequenceItem(
-          weight: 1.0,
+          weight: 3,
           tween: ColorTween(begin: Colors.green, end: Colors.yellow),
         ),
         TweenSequenceItem(
-          weight: 1.0,
+          weight: 3,
           tween: ColorTween(begin: Colors.yellow, end: Colors.blue),
         ),
         TweenSequenceItem(
-          weight: 1.0,
+          weight: 3,
           tween: ColorTween(begin: Colors.blue, end: Colors.orange),
         ),
         TweenSequenceItem(
-          weight: 1.0,
+          weight: 3,
           tween: ColorTween(begin: Colors.orange, end: Colors.grey),
         ),
         TweenSequenceItem(
-          weight: 1.0,
+          weight: 3,
           tween: ColorTween(begin: Colors.grey, end: Colors.deepPurple),
         ),
         TweenSequenceItem(
-          weight: 1.0,
+          weight: 3,
           tween: ColorTween(begin: Colors.deepPurple, end: Colors.blue),
         ),
       ],
